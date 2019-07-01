@@ -54,10 +54,16 @@ function play(clickedId) {
     if (topRight !== undefined && topRight === middleRight && bottomRight === topRight){
         alert(topRight + ' is the winner')
         }
-    //console.log(board)
+    //One Diagonal Match
     if (topRight !== undefined && topRight === middleCenter && middleCenter === bottomLeft){
         alert(topRight + ' is the winner')
         }
+    if (topLeft !== undefined && topLeft === middleCenter && middleCenter === bottomRight){
+        alert(topLeft + ' is the winner')
+    }
+    else if(topLeft !== undefined && topRight !==undefined && middleCenter !== undefined && topCenter !== undefined && middleLeft !== undefined && middleRight !== undefined && bottomRight !== undefined && bottomLeft !== undefined && bottomCenter !==undefined){
+        alert('Cats Game!')
+    }
 }
 function reset(){
     for(i=0;i<10;i++){
@@ -66,4 +72,5 @@ function reset(){
     //console.dir(squares)
          board = []
         // console.log(board)
+        
 }
