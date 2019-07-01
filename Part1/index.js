@@ -67,7 +67,7 @@ function play(clickedId) {
 }
 function reset(){
     for(i=0;i<10;i++){
-        document.getElementById(i).innerHTML = ' '    
+        document.getElementById(i).innerText = ''    
     }
     //console.dir(squares)
          board = []
