@@ -26,42 +26,50 @@ function play(clickedId) {
     let bottomLeft = board[6]
     let bottomCenter = board[7]
     let bottomRight = board[8]
+    let winCheck = false;
     // Top Match
     if (topRight !== undefined && topRight === topCenter && topRight === topLeft){
-        console.log(board)
+        winCheck = true
         
         setTimeout(alert(topRight + ' is the winner'), 1000)
     }
     //Midle Match
     if (middleRight !== undefined && middleRight === middleCenter && middleRight === middleLeft){
-        console.log(board)
+        winCheck = true
         setTimeout(alert(middleRight + ' is the winner'), 1000)
     }
     //Bottom Match
     if (bottomRight !== undefined && bottomRight === bottomCenter && bottomRight === bottomLeft){
-        console.log(board)
+        winCheck = true
         setTimeout(alert(bottomRight + ' is the winner'), 1000)
     }
     // All Left Match
     if (topLeft !== undefined && topLeft === middleLeft && bottomLeft === middleLeft){
+        winCheck = true
     (alert(topLeft + ' is the winner'), 1000)
     }
     //All Center Match
     if (topCenter !== undefined && middleCenter === bottomCenter && bottomCenter === topCenter){
+        winCheck = true
         alert(topCenter + ' is the winner')
         }
     //All Right Match
     if (topRight !== undefined && topRight === middleRight && bottomRight === topRight){
+        winCheck = true
         alert(topRight + ' is the winner')
         }
     //One Diagonal Match
     if (topRight !== undefined && topRight === middleCenter && middleCenter === bottomLeft){
+        winCheck = true
         alert(topRight + ' is the winner')
         }
+    //Other Diagonal Match
     if (topLeft !== undefined && topLeft === middleCenter && middleCenter === bottomRight){
+        winCheck = true
         alert(topLeft + ' is the winner')
     }
-    else if(topLeft !== undefined && topRight !==undefined && middleCenter !== undefined && topCenter !== undefined && middleLeft !== undefined && middleRight !== undefined && bottomRight !== undefined && bottomLeft !== undefined && bottomCenter !==undefined){
+    // I'd like to take this opportunity to apoligize for this next 3 lines of code
+    else if(topLeft !== undefined && topRight !==undefined && middleCenter !== undefined && topCenter !== undefined && middleLeft !== undefined && middleRight !== undefined && bottomRight !== undefined && bottomLeft !== undefined && bottomCenter !==undefined && winCheck == false){
         alert('Cats Game!')
     }
 }
